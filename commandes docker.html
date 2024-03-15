@@ -32,8 +32,14 @@ docker rm ID serveur : delete serveur (doit être stop d'abord)
 docker rmi nomimage : delete image (rmi : remove image)
 
 # DEPUIS NOUVEAU DOSSIER LOCAL
-
+Pour NGINX
 docker run -d -p 8080:80 --name nom -v${PWD}:/app/usr/share/nginx/html nginx (-v : ouvrir volume)
 -> serveur ouvert mais ERROR 403 car pas de fichier HTML créé
 faire code . depuis le dossier app et créer fichier index.html 
 -> le site local fonctionne
+
+POUR APACHE (HTTPD)
+docker run -d -p 8080:80 --name nomserveur -v ${PWD}:/app/usr/local/apache2/htdocs HTTPD
+serveur ouvert mais Index of/ 
+faire code . depuis le dossier app et créer le fichier index.html 
+-> le site local fonctionne 
