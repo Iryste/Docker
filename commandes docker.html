@@ -33,7 +33,7 @@ docker rmi nomimage : delete image (rmi : remove image)
 
 # DEPUIS NOUVEAU DOSSIER LOCAL
 
-docker run -d -p 8080:80 --name nom -v${PWD}/app/usr/share/nginx/html nginx
+docker run -d -p 8080:80 --name nom -v${PWD}:/app/usr/share/nginx/html nginx (-v : ouvrir volume)
 -> serveur ouvert mais ERROR 403 car pas de fichier HTML créé
 faire code . depuis le dossier app et créer fichier index.html 
 -> le site local fonctionne
