@@ -24,7 +24,7 @@ docker run -d -p 8080:80 --name nomserveur
 docker run -d -p 8080:80 --name nomserveur -v monsite:/usr/share/nginx/html nginx
 OU 
 docker run -d -p 8080:80 --name monserveur --mount=monsite,target=usr/share/nginx/html nginx
--v : créer volume
+(-v : créer volume)
 
 DELETE
 
