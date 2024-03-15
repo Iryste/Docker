@@ -1,0 +1,27 @@
+# COMMANDES POUR DOCKER
+Structure de commande : docker catégorie commande options
+
+docker run hello-world / nginx / ubuntu : download sur docker depuis CMD
+
+docker start / docker stop ID serveur 
+docker container ls / docker ps -a : liste
+docker exec -ti ID serveur bash : lancer serveur
+
+apt-get update -> apt install nano : installer nano  (éditeur de texte)
+nano index.html : lancer nano
+
+# POUR CREER OU DELETE UN SERVEUR 
+CREER
+
+docker run -d -p 8080:80 --name nomserveur
+-d : détache le terminal / -p ouvrir un port
+
+docker run -d -p 8080:80 --name nomserveur -v monsite:/usr/share/nginx/html nginx
+OU 
+docker run -d -p 8080:80 --name monserveur --mount=monsite,target=usr/share/nginx/html nginx
+-v : créer volume
+
+DELETE
+
+docker rm ID serveur : delete serveur (doit être stop d'abord)
+docker rmi nomimage : delete image (rmi : remove image)
